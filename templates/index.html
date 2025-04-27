@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veil</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="btns">
+        <div class="cartbtn">
+            <a href="cart.html">
+                <div class="carticon">
+                    <img src="../static/imgs/cart.svg" alt="">
+                </div>
+                <div class="carttxt">
+                    <p>Cart</p>
+                </div>
+            </a>
+        </div>
+        <div class="userbtn">
+            <a href = "login">
+                <div class="usericon">
+                    <img src="../static/imgs/user.svg" alt="">
+                </div>
+                <div class="usertxt">
+                    <p>Login</p>
+                    <p>user</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div id="home">
+        <div class="bg">
+            <img src="../static/imgs/veil.png" alt="">
+        </div>
+        <div class="homemain">
+            <div class="homemenu">
+                <img src="../static/imgs/logo.svg" alt="">
+                <a href = "#about">About</a>
+                <a href = "#menu">Menu</a>
+                <a href = "#delivery">Delivery</a>
+                <a href = "#contactarea">Contact</a>
+            </div>
+            <div class="hometxt">
+                <div class="homehero">
+                    <p>THE ALAN WAKE 2 CINEMATIC REIMAGINED INTO A <span>RESTAURANT</span></p>
+                </div>
+                <div class="homedesc">
+                    <p>Our company uses interactive storytelling and immersive design not just to entertain, but to question the role of consumerism in both gaming and food. It turns passive eating into reflective engagement, curbing waste and challenging diners to rethink their relationship with technology, food, and reality.</p>
+                </div>
+            </div>
+            <div class="reservebtn">
+                <a href = "#contactarea">Reserve a Table</a>
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="aboutgrid">
+            <div class="mindroom">
+                <img src="../static/imgs/conceptblur.svg" alt="" class="bgimg">
+                <div class="abouthead">
+                    <p>Feel the experience</p>
+                </div>
+                <div class="aboutdesc">
+                    <p>The experience of the restaurant and cuisine will make you feel like you are in the game yourself.</p>
+                </div>
+                <div class="aboutfooter">ALAN WAKE II</div>
+                <div class="aboutbox"></div>
+            </div>
+            <div class="mealstory">
+                <img src="../static/imgs/conceptblur.svg" alt="" class="bgimg">
+                <div class="abouthead">
+                    <p>The meal is the story</p>
+                </div>
+                <div class="aboutdesc">
+                    <p>As you progress further and further into your meal, it uncovers more of the story.</p>
+                </div>
+                <div class="aboutfooter">ALAN WAKE II</div>
+                <div class="aboutbox"></div>
+            </div>
+            <div class="atmosphere">
+                <img src="../static/imgs/conceptblur.svg" alt="" class="bgimg">
+                <div class="abouthead">
+                    <p>Enjoy the atmosphere</p>
+                </div>
+                <div class="aboutdesc">
+                    <p>The ambience and lighting of the restaurant show the parallel themes of Light and Dark in the game.</p>
+                </div>
+                <div class="aboutfooter">ALAN WAKE II</div>
+                <div class="aboutbox"></div>
+            </div>
+        </div>
+        <div class="abtdelisystem">
+            <div class="abtdeligrid">
+                <div class="abtdelitext">THE DELIVERY SYSTEM</div>
+                <div class="abtdelidesc">We offer delivery to your house with our special set of mealboxes to provide you with the experience of Alan Wake 2 at the comfort of your house</div>
+                <div class="abtdelibtn">
+                    <a href = "#delivery">Order now</a>
+                </div>
+            </div>
+            <div class="bgimgcont">
+                <img src="../static/imgs/bigtxt.png" alt="" class="bgimg">
+            </div>
+        </div>
+    </div>
+    <div id="menu">
+        <div class="menuhead">
+            <p>the menu</p>
+        </div>
+        <div class="menufuncs">
+            <div class="search">
+                <div class="searchlogo">
+                    <img src="../static/imgs/search.svg" alt="">
+                </div>
+                <input type="search" class = "searchtxt" placeholder = "Search">
+            </div>
+            <div class="dropdown">
+                <select class="dropdownbar">
+                    <option value="All" selected="selected">All</option>
+                    <option value="Appetizers">Appetizers</option>
+                    <option value="Main Course">Main Course</option>
+                    <option value="Desserts">Desserts</option>
+                    <option value="Drinks">Drinks</option>
+                </select>
+            </div>
+        </div>
+        <div class="menuitems">
+            <div class="menuitem">
+                <img src="../static/imgs/menublur.svg" alt="" class="bgimg">
+                <div class="itemname">
+                    <p>Spicy Couldron Stew</p>
+                </div>
+                <div class="itemdesc">
+                    <p>Smoked meats, blackened peppers, dark ale, and fiery spices.</p>
+                </div>
+                <div class="itemimg">
+                    <img src="../static/imgs/stew.svg" alt="">
+                </div>
+                <div class="itemfooter">
+                    <p>by the most skilled of chefs, just for you</p>
+                </div>
+                <div class="itembox">
+                    <p>₹150</p>
+                </div>
+            </div>
+            <div class="menuitem">
+                <img src="../static/imgs/menublur.svg" alt="" class="bgimg">
+                <div class="itemname">
+                    <p>Spicy Couldron Stew</p>
+                </div>
+                <div class="itemdesc">
+                    <p>Smoked meats, blackened peppers, dark ale, and fiery spices.</p>
+                </div>
+                <div class="itemimg">
+                    <img src="../static/imgs/stew.svg" alt="">
+                </div>
+                <div class="itemfooter">
+                    <p>by the most skilled of chefs, just for you</p>
+                </div>
+                <div class="itembox">
+                    <p>₹150</p>
+                </div>
+            </div>
+            <div class="menuitem">
+                <img src="../static/imgs/menublur.svg" alt="" class="bgimg">
+                <div class="itemname">
+                    <p>Spicy Couldron Stew</p>
+                </div>
+                <div class="itemdesc">
+                    <p>Smoked meats, blackened peppers, dark ale, and fiery spices.</p>
+                </div>
+                <div class="itemimg">
+                    <img src="../static/imgs/stew.svg" alt="">
+                </div>
+                <div class="itemfooter">
+                    <p>by the most skilled of chefs, just for you</p>
+                </div>
+                <div class="itembox">
+                    <p>₹150</p>
+                </div>
+            </div>
+            <div class="menuitem">
+                <img src="../static/imgs/menublur.svg" alt="" class="bgimg">
+                <div class="itemname">
+                    <p>Spicy Couldron Stew</p>
+                </div>
+                <div class="itemdesc">
+                    <p>Smoked meats, blackened peppers, dark ale, and fiery spices.</p>
+                </div>
+                <div class="itemimg">
+                    <img src="../static/imgs/stew.svg" alt="">
+                </div>
+                <div class="itemfooter">
+                    <p>by the most skilled of chefs, just for you</p>
+                </div>
+                <div class="itembox">
+                    <p>₹150</p>
+                </div>
+            </div>
+            <div class="menuitem">
+                <img src="../static/imgs/menublur.svg" alt="" class="bgimg">
+                <div class="itemname">
+                    <p>Spicy Couldron Stew</p>
+                </div>
+                <div class="itemdesc">
+                    <p>Smoked meats, blackened peppers, dark ale, and fiery spices.</p>
+                </div>
+                <div class="itemimg">
+                    <img src="../static/imgs/stew.svg" alt="">
+                </div>
+                <div class="itemfooter">
+                    <p>by the most skilled of chefs, just for you</p>
+                </div>
+                <div class="itembox">
+                    <p>₹150</p>
+                </div>
+            </div>
+            <div class="menuitem">
+                <img src="../static/imgs/menublur.svg" alt="" class="bgimg">
+                <div class="itemname">
+                    <p>Spicy Couldron Stew</p>
+                </div>
+                <div class="itemdesc">
+                    <p>Smoked meats, blackened peppers, dark ale, and fiery spices.</p>
+                </div>
+                <div class="itemimg">
+                    <img src="../static/imgs/stew.svg" alt="">
+                </div>
+                <div class="itemfooter">
+                    <p>by the most skilled of chefs, just for you</p>
+                </div>
+                <div class="itembox">
+                    <p>₹150</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="delivery">
+        <div class="deliveryhead">WANT IT AT YOUR <span>HOME</span>?</div>
+        <div class="deliverydesc">we gotchu</div>
+        <div class="deliveryitems">
+            <div class="deliveryitem">
+                <div class="ditemimg"></div>
+                <div class="ditemname">
+                    <p>Alan Wake Meal Box</p>
+                </div>
+                <div class="ditemdesc">
+                    <p>1 Alan Wake funko pop, 1 midnight lasagna, 2 dark place old fashioned, 1 blackened venison stew, 1 ink dipped calamari, 1 lake mirror panna cotta</p>
+                </div>
+                <div class="ditemcost">₹1210</div>
+                <div class="ditemadd">
+                    <p>Add to cart</p>
+                </div>
+            </div>
+            <div class="deliveryitem">
+                <div class="ditemimg"></div>
+                <div class="ditemname">
+                    <p>Mr.Scratch Meal Box</p>
+                </div>
+                <div class="ditemdesc">
+                    <p>1 Mr. Scratch funko pop, 1 charred ribeye with ritual butter, 2 coffee world shake, 1 ash rubbed duck breast, 1 rye & rot cheese board, 1 sage & berry crumble</p>
+                </div>
+                <div class="ditemcost">₹1210</div>
+                <div class="ditemadd">
+                    <p>Add to cart</p>
+                </div>
+            </div>
+            <div class="deliveryitem">
+                <div class="ditemimg"></div>
+                <div class="ditemname">
+                    <p>Saga Andersson Meal Box</p>
+                </div>
+                <div class="ditemdesc">
+                    <p>1 flashlight keychain, 1 smoked forest toast, 1 sage & berry crumble, 1 watery whisky sour</p>
+                </div>
+                <div class="ditemcost">₹1210</div>
+                <div class="ditemadd">
+                    <p>Add to cart</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="reviewhead">
+            <p>Testimonials from our <span>valued guests</span>.</p>
+        </div>
+        <div class="reviews">
+            <div class="review">
+                <img src="../static/imgs/reviewblur.svg" alt="" class="bgimg">
+                <div class="reviewrating">
+                    <div>
+                        <img src="../static/imgs/fstar.svg" alt="">
+                    </div>
+                    <div>
+                        <p>5.0</p>
+                    </div>
+                </div>
+                <div class="reviewtitle">
+                    <p>The atmosphere was awesome!</p>
+                </div>
+                <div class="reviewdesc">
+                    <p>
+                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured, genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a standing ovation: fl...
+                    </p>
+                </div>
+                <div class="reviewpfp">
+                    <img src="../static/imgs/greyuser.svg" alt="">
+                </div>
+            </div>
+            <div class="review">
+                <img src="../static/imgs/reviewblur.svg" alt="" class="bgimg">
+                <div class="reviewrating">
+                    <div>
+                        <img src="../static/imgs/fstar.svg" alt="">
+                    </div>
+                    <div>
+                        <p>5.0</p>
+                    </div>
+                </div>
+                <div class="reviewtitle">
+                    <p>The atmosphere was awesome!</p>
+                </div>
+                <div class="reviewdesc">
+                    <p>
+                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured, genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a standing ovation: fl...
+                    </p>
+                </div>
+                <div class="reviewpfp">
+                    <img src="../static/imgs/greyuser.svg" alt="">
+                </div>
+            </div>
+            <div class="review">
+                <img src="../static/imgs/reviewblur.svg" alt="" class="bgimg">
+                <div class="reviewrating">
+                    <div>
+                        <img src="../static/imgs/fstar.svg" alt="">
+                    </div>
+                    <div>
+                        <p>5.0</p>
+                    </div>
+                </div>
+                <div class="reviewtitle">
+                    <p>The atmosphere was awesome!</p>
+                </div>
+                <div class="reviewdesc">
+                    <p>
+                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured, genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a standing ovation: fl...
+                    </p>
+                </div>
+                <div class="reviewpfp">
+                    <img src="../static/imgs/greyuser.svg" alt="">
+                </div>
+            </div>
+            <div class="review">
+                <img src="../static/imgs/reviewblur.svg" alt="" class="bgimg">
+                <div class="reviewrating">
+                    <div>
+                        <img src="../static/imgs/fstar.svg" alt="">
+                    </div>
+                    <div>
+                        <p>5.0</p>
+                    </div>
+                </div>
+                <div class="reviewtitle">
+                    <p>The atmosphere was awesome!</p>
+                </div>
+                <div class="reviewdesc">
+                    <p>
+                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured, genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a standing ovation: fl...
+                    </p>
+                </div>
+                <div class="reviewpfp">
+                    <img src="../static/imgs/greyuser.svg" alt="">
+                </div>
+            </div>
+            <div class="review">
+                <img src="../static/imgs/reviewblur.svg" alt="" class="bgimg">
+                <div class="reviewrating">
+                    <div>
+                        <img src="../static/imgs/fstar.svg" alt="">
+                    </div>
+                    <div>
+                        <p>5.0</p>
+                    </div>
+                </div>
+                <div class="reviewtitle">
+                    <p>The atmosphere was awesome!</p>
+                </div>
+                <div class="reviewdesc">
+                    <p>
+                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured, genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a standing ovation: fl...
+                    </p>
+                </div>
+                <div class="reviewpfp">
+                    <img src="../static/imgs/greyuser.svg" alt="">
+                </div>
+            </div>
+            <div class="space"></div>
+        </div>
+        <div id="contactarea">
+            <div class="contactlogo">
+                <img src="../static/imgs/veilblack.svg" alt="">
+            </div>
+            <div class="follow">
+                <p>Follow us</p>
+            </div>
+            <div class="socials">
+                <img src="../static/imgs/instagram.svg" alt="">
+                <img src="../static/imgs/discord.svg" alt="">
+                <img src="../static/imgs/twitter.svg" alt="">
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2025 VEIL. All rights reserved</p>
+            </div>
+            <div class="cntinfo">
+                <p>Contact info</p>
+            </div>
+            <div class="phonenum">
+                <p>+91 21229 21929</p>
+            </div>
+            <div class="gmail">
+                <p>veil@gmail.com</p>
+            </div>
+            <div class="backtotop">
+                <a href = "#home">Back to the top</a>
+            </div>
+        </div>
+    </div>
+    <script src="../static/index.js"></script>
+</body>
+</html>

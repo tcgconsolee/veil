@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../static/loginregister.css">
+</head>
+<body>
+    <div class="bg">
+        <img src="../static/imgs/veil.png" alt="">
+    </div>
+    <a href="index.html">
+        <div class="logo">
+            <img src="../static/imgs/logo.svg" alt="">
+        </div>
+    </a>
+    <div class="btns">
+        <div class="cartbtn">
+            <a href="cart.html">
+                <div class="carticon">
+                    <img src="../static/imgs/cart.svg" alt="">
+                </div>
+                <div class="carttxt">
+                    <p>Cart</p>
+                </div>
+            </a>
+        </div>
+        <div class="userbtn">
+            <a>
+                <div class="usericon">
+                    <img src="../static/imgs/user.svg" alt="">
+                </div>
+                <div class="usertxt">
+                    <p>Login</p>
+                    <p>user</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="box">
+        <img src="../static/imgs/homeblur.svg" alt="" class="bgimg">
+        <div class="boxhead">LOGIN</div>
+        <form method=post>
+            <div class="un">
+                <div class="logo-un">
+                    <div class="box-un">
+                        <img src="../static/imgs/username.svg" alt="Username">
+                    </div>
+                </div>
+                <input type="text" id = "uname" name="uname">
+            </div><br>
+            <div class="pw">
+                <div class="logo-pw">
+                    <div class="box-pw">
+                        <img src="../static/imgs/password.svg" alt="Password">
+                    </div>
+                </div>
+                <input type="password" id = "psw" name = "psw"><br>
+                <div class="hs">
+                    <div class="h">
+                        <img src="../static/imgs/hidden.svg" alt="Hide Password">
+                    </div>
+                    <div class="s">
+                        <img src="../static/imgs/shown.svg" alt="Show Password">
+                    </div>
+                </div>
+            </div><br>
+            <div class="redir-sign">
+                <p>Don't have an account? <a href = "./register" style = "text-decoration: underline">Register</a></p>
+            </div><br>
+            <input type="submit" value = "Log in" class = "submit">
+        </form>
+    </div>
+    <script>
+        let psw = false;
+        document.getElementsByClassName("hs")[0].addEventListener('click', () => {
+            if(psw) {
+                document.getElementsByClassName("h")[0].style.display = "none"
+                document.getElementsByClassName("s")[0].style.display = "block"
+                document.getElementById("psw").type = "password"
+                psw = false;
+            } else {
+                document.getElementsByClassName("h")[0].style.display = "block"
+                document.getElementsByClassName("s")[0].style.display = "none"
+                document.getElementById("psw").type = "text"
+                psw = true;
+            }
+        })
+    </script>
+</body>
+</html>
