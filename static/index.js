@@ -1,5 +1,5 @@
 if(document.getElementById("aw")) {
-    if(document.querySelector(".usertxt p:nth-child(1)").innerHTML === "Login") {} else {
+    if(window.location.href.includes("&aw")) {
         document.querySelector("#aw .dnum").innerHTML = (window.location.href.split("&aw=")[1]).split("&ms")[0]
         document.querySelector("#ms .dnum").innerHTML = (window.location.href.split("&ms=")[1]).split("&sa")[0]
         document.querySelector("#sa .dnum").innerHTML = window.location.href.split("&sa=")[1]
