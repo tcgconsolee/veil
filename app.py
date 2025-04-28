@@ -1,6 +1,6 @@
 import os
-from flask import Flask, render_template, redirect, url_for, request
-from flask_login import LoginManager, UserMixin, login_user, current_user, logout_user
+from flask import Flask, render_template, redirect, url_for, request, jsonify
+from flask_login import LoginManager, UserMixin, login_user, current_user
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -15,28 +15,36 @@ class Users(UserMixin, db.Model):
     username = db.Column(db.String(250), unique=True, nullable=False)
     password = db.Column(db.String(250), nullable=False)
     location = db.Column(db.String(250), nullable=False)
+    aw = db.Column(db.String(250), nullable=False)
+    ms = db.Column(db.String(250), nullable=False)
+    sa = db.Column(db.String(250), nullable=False)
 
 
 login_manager = LoginManager(app)
 
+app.app_context().push()
 with app.app_context():
+    db.drop_all()
     db.create_all()
 
 @app.route('/')
+@app.route('/index')
 def index():
     return render_template('index.html')
 
 @app.route('/cart')
 def cart():
-    return render_template('cart.html')
+    return render_template("cart.html")
 
 @app.route('/delivery')
 def delivery():
-    return render_template('delivery.html')
+    user = db.session.query(Users).filter_by(username="aakash").first()
+    return render_template('delivery.html', username = user.username, location = user.location)
 
 
 @login_manager.user_loader
 def loader_user(user_id):
+
     return Users.query.get(user_id)
 
 @app.route('/register', methods=["GET", "POST"])
@@ -53,7 +61,10 @@ def register():
             return render_template("sign_up.html", value = "LOCATION IS BLANK")
         user = Users(username=request.form.get("uname"),
                      password=request.form.get("psw"),
-                     location=request.form.get("loc"))
+                     location=request.form.get("loc"),
+                     aw="0",
+                     ms="0",
+                     sa="0")
     
         db.session.add(user)    
         db.session.commit()
@@ -61,13 +72,13 @@ def register():
     
         return redirect(url_for("login"))
 
-    return render_template("sign_up.html", value ="")
+    return render_template("sign_up.html", value = None)
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for("index", logged_in = True, username = current_user.username))
+        return redirect(url_for("index", username= current_user.username, aw=current_user.aw, ms=current_user.ms, sa=current_user.sa))
 
 
     if request.method == "POST":
@@ -79,9 +90,8 @@ def login():
     
         if user.password == request.form.get("psw"):
             login_user(user)
-            return redirect(url_for("index", username = user.username))
+            return redirect(url_for("index", username = user.username, aw = user.aw, ms = user.ms, sa = user.sa))
     return render_template("login.html")
 
 if __name__ == "__main__":
     app.run(host ="0.0.0.0", port = 10000, debug=False)
-    

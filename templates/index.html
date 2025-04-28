@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="btns">
-        <a href="cart?aw=0&ms=0&sa=0" id ="carta">
+        <a id ="carta">
             <div class="cartbtn">
                     <div class="carticon">
                         <img src="../static/imgs/cart.svg" alt="">
@@ -19,7 +19,7 @@
                     </div>
             </div>
         </a>
-        <a href = "login">
+        <a id = "logina">
             <div class="userbtn">
                 <div class="usericon">
                     <img src="../static/imgs/user.svg" alt="">
@@ -242,7 +242,9 @@
         <div class="deliverydesc">we gotchu</div>
         <div class="deliveryitems">
             <div class="deliveryitem">
-                <div class="ditemimg"></div>
+                <div class="ditemimg">
+                    <img src="../static/imgs/mealbox.png" alt="" style="width:100%;position:absolute;top: 60%;transform:translateY(-50%)">
+                </div>
                 <div class="ditemname">
                     <p>Alan Wake Meal Box</p>
                 </div>
@@ -260,7 +262,9 @@
                 </div>
             </div>
             <div class="deliveryitem">
-                <div class="ditemimg"></div>
+                <div class="ditemimg">
+                    <img src="../static/imgs/mealbox.png" alt="" style="width:100%;position:absolute;top: 60%;transform:translateY(-50%)">
+                </div>
                 <div class="ditemname">
                     <p>Mr.Scratch Meal Box</p>
                 </div>
@@ -278,7 +282,9 @@
                 </div>
             </div>
             <div class="deliveryitem">
-                <div class="ditemimg"></div>
+                <div class="ditemimg">
+                    <img src="../static/imgs/mealbox.png" alt="" style="width:100%;position:absolute;top: 60%;transform:translateY(-50%)">
+                </div>
                 <div class="ditemname">
                     <p>Saga Andersson Meal Box</p>
                 </div>
@@ -446,13 +452,10 @@
     <script src="../static/index.js"></script>
     <script>
         if(window.location.href.includes("?username")) {
-            document.querySelector(".usertxt p:nth-child(1)").innerHTML = window.location.href.split("?username=")[1]
+            document.querySelector(".usertxt p:nth-child(1)").innerHTML = (window.location.href.split("?username=")[1]).split("&aw")[0]
+        } else {
+            document.getElementById("logina").href = "login"
         }
-        function cart() {
-            document.getElementById("carta").href = `cart?aw${document.querySelector("#aw .dnum").innerHTML}&ms${document.querySelector("#ms .dnum").innerHTML}&sa${document.querySelector("#sa .dnum").innerHTML}`
-            requestAnimationFrame(cart)
-        }
-        requestAnimationFrame(cart)
     </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 html {
-    scroll-behavior:auto;
+    scroll-behavior:smooth;
 }
 body {
     margin: 0;
@@ -537,6 +537,7 @@ input:focus, select:focus {
     justify-content: center;
     border-radius: 2vmax;
     cursor: pointer;
+    user-select: none;
 }
 .dnums {
     position: absolute;
@@ -1016,4 +1017,14 @@ div.options > label > input:checked +img {
 }
 #about, #menu, #contact {
     z-index: -1;
+}
+.cartph {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5vmax;
+    font-family: 's';
+    font-weight: 700;
+    text-wrap: nowrap;
 }

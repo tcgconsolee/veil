@@ -25,6 +25,9 @@
                 Price
             </div>
         </div>
+        <div class="cartph">
+            <p>Looks like there's nothing here.</p>
+        </div>
     </div>
     <div class="conc">
         <div>
@@ -34,7 +37,7 @@
             <p>Total: </p>
         </div>
         <div>
-            <p>₹3520</p>
+            <p id = "total">₹3520</p>
         </div>
     </div>
     <div class="ordering">
@@ -86,108 +89,16 @@
             <input type="text" class="instructinput">
         </div>
     </div>
-    <a href = "delivery">
+    <a id = "delia">
         <div class="pay">
             Pay For Order
         </div>
     </a>
+    <script src="../static/cart.js"></script>
     <script>
-        if(Number((window.location.href.split("?aw=")[1]).split["&"][0]) > 0) {
-            document.getElementsByClassName("grid")[0].append(
-                ```
-                <div class="row">
-                    <div class="column">
-                        <div class="interrow">
-                            <p>Alan Wake Meal Box</p>
-                        </div>
-                        <div class="interrow">
-                            <p>1 Alan Wake funko pop, 1 midnight lasagna, 2 dark place old fashioned, 1 blackened venison stew, 1 ink dipped calamari, 1 lake mirror panna cotta</p>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="amt">
-                            <div class="minus">
-                                <p>-</p>
-                            </div>
-                            <div class="num">
-                                <p>${Number((window.location.href.split("?aw=")[1]).split["&"][0])}</p>
-                            </div>
-                            <div class="plus">
-                                <p>+</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <p>₹1210</p>
-                    </div>
-                </div>
-            ```
-            )
-        }
-        if(Number((window.location.href.split("?ms=")[1]).split["&"][0]) > 0) {
-            document.getElementsByClassName("grid")[0].append(
-            ```
-                <div class="row">
-                    <div class="column">
-                        <div class="interrow">
-                            <p>Mr. Scratch Meal Box</p>
-                        </div>
-                        <div class="interrow">
-                            <p>1 Mr. Scratch funko pop, 1 charred ribeye with ritual butter, 2 coffee world shake, 1 ash rubbed duck breast, 1 rye & rot cheese board, 1 sage & berry crumble</p>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="amt">
-                            <div class="minus">
-                                <p>-</p>
-                            </div>
-                            <div class="num">
-                                <p>${Number((window.location.href.split("?ms=")[1]).split["&"][0])}</p>
-                            </div>
-                            <div class="plus">
-                                <p>+</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <p>₹1210</p>
-                    </div>
-                </div>
-            ```
-            )
-        }
-        if(Number(window.location.href.split("?sa=")[1]) > 0) {
-            document.getElementsByClassName("grid")[0].append(
-                ```
-                <div class="row">
-                    <div class="column">
-                        <div class="interrow">
-                            <p>Saga Andersson Meal Box</p>
-                        </div>
-                        <div class="interrow">
-                            <p>1 flashlight keychain, 1 smoked forest toast, 1 sage & berry crumble, 1 watery whisky sour</p>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="amt">
-                            <div class="minus">
-                                <p>-</p>
-                            </div>
-                            <div class="num">
-                                <p>${Number(window.location.href.split("?sa=")[1])}</p>
-                            </div>
-                            <div class="plus">
-                                <p>+</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <p>₹1100</p>
-                    </div>
-                </div>
-                ```
-            )
-        }
+        document.getElementById("delia").addEventListener("click", () => {
+            window.location.href=`delivery?total=${document.getElementById("total").innerHTML.slice(1)}&username=${(window.location.href.split("?username=")[1]).split("&aw")[0]}`
+        })
     </script>
 </body>
 </html>

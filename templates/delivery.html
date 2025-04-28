@@ -34,13 +34,13 @@
         </div>
         <div class="subtext">
             <p>
-                : David <br>
-                : <br>
+                : <span id = "deliuname"></span> <br>
+                : Your current location <br>
                 <br>
                 : +91 82937423XX <br>
                 <br>
                 : 001 <br>
-                : ₹3520 <br>    
+                : ₹<span id = "totaldeli"></span> <br>    
             </p>
         </div>
         <div class="receipt">
@@ -53,6 +53,10 @@
         </div>
         <img src="../static/imgs/call.svg" alt="" class="callimg">
     </div>
+    <script>
+        document.getElementById("totaldeli").innerHTML = (window.location.href.split("?total=")[1]).split("&username")[0]
+        document.getElementById("deliuname").innerHTML = window.location.href.split("&username=")[1]
+    </script>
     <script src="https://maps.googleapis.com/maps/api/js?client=google-maps-embed&amp;paint_origin=&amp;libraries=geometry,search&amp;v=weekly&amp;loading=async&amp;language=en&amp;region=in&amp;callback=onApiLoad" nonce="" async="" defer=""></script>
     <script src="https://maps.gstatic.com/maps-api-v3/embed/js/60/10/init_embed.js"></script>
 </body>
