@@ -38,8 +38,7 @@ def cart():
 
 @app.route('/delivery')
 def delivery():
-    user = db.session.query(Users).filter_by(username="aakash").first()
-    return render_template('delivery.html', username = user.username, location = user.location)
+    return render_template('delivery.html')
 
 
 @login_manager.user_loader
