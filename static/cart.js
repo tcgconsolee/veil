@@ -95,10 +95,13 @@ if(Number(window.location.href.split("&sa=")[1]) > 0) {
         `
     )
 }
+let aw;
+let ms;
+let sa;
 function total() {
-    let aw = 0;
-    let ms = 0;
-    let sa = 0;
+    aw = 0;
+    ms = 0;
+    sa = 0;
     if(document.getElementById("awr")) {
         aw = Number(document.querySelector("#awmb .num p").innerHTML)*1210
     }
@@ -137,6 +140,12 @@ function cartcheck() {
     requestAnimationFrame(cartcheck)
 }
 requestAnimationFrame(cartcheck)
+document.getElementById("jf").addEventListener("click", () => {
+    window.location.href=`./index?username=${(window.location.href.split("?username=")[1]).split("&aw")[0]}&aw=${aw/1210}&ms=${ms/1210}&sa=${sa/1100}`
+})
+document.getElementById("ff").addEventListener("click", () => {
+    window.location.href=`./index#delivery?username=${(window.location.href.split("?username=")[1]).split("&aw")[0]}&aw=${aw/1210}&ms=${ms/1210}&sa=${sa/1100}`
+})
 document.querySelector("#awmb .minus").addEventListener("click", () => {
     document.querySelector("#awmb .num p").innerHTML = Number(document.querySelector("#awmb .num p").innerHTML) - 1
 })
