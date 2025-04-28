@@ -27,8 +27,13 @@ def index():
     return render_template('index.html')
 
 @app.route('/cart')
-def index():
+def cart():
     return render_template('cart.html')
+
+@app.route('/delivery')
+def delivery():
+    return render_template('delivery.html')
+
 
 @login_manager.user_loader
 def loader_user(user_id):
@@ -74,7 +79,7 @@ def login():
     
         if user.password == request.form.get("psw"):
             login_user(user)
-            return redirect(url_for("index", logged_in = True, username = user.username))
+            return redirect(url_for("index", username = user.username))
     return render_template("login.html")
 
 if __name__ == "__main__":

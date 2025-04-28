@@ -9,18 +9,18 @@
 </head>
 <body>
     <div class="btns">
-        <div class="cartbtn">
-            <a href="cart.html">
-                <div class="carticon">
-                    <img src="../static/imgs/cart.svg" alt="">
-                </div>
-                <div class="carttxt">
-                    <p>Cart</p>
-                </div>
-            </a>
-        </div>
-        <div class="userbtn">
-            <a href = "login">
+        <a href="cart?aw=0&ms=0&sa=0" id ="carta">
+            <div class="cartbtn">
+                    <div class="carticon">
+                        <img src="../static/imgs/cart.svg" alt="">
+                    </div>
+                    <div class="carttxt">
+                        <p>Cart</p>
+                    </div>
+            </div>
+        </a>
+        <a href = "login">
+            <div class="userbtn">
                 <div class="usericon">
                     <img src="../static/imgs/user.svg" alt="">
                 </div>
@@ -28,8 +28,8 @@
                     <p>Login</p>
                     <p>user</p>
                 </div>
-            </a>
-        </div>
+            </div>
+        </a>
     </div>
     <div id="home">
         <div class="bg">
@@ -250,8 +250,13 @@
                     <p>1 Alan Wake funko pop, 1 midnight lasagna, 2 dark place old fashioned, 1 blackened venison stew, 1 ink dipped calamari, 1 lake mirror panna cotta</p>
                 </div>
                 <div class="ditemcost">₹1210</div>
-                <div class="ditemadd">
+                <div class="ditemadd" id = "aw">
                     <p>Add to cart</p>
+                    <div class="dnums">
+                        <div class="dminus">-</div>
+                        <div class="dnum">0</div>
+                        <div class="dplus">+</div>
+                    </div>
                 </div>
             </div>
             <div class="deliveryitem">
@@ -263,8 +268,13 @@
                     <p>1 Mr. Scratch funko pop, 1 charred ribeye with ritual butter, 2 coffee world shake, 1 ash rubbed duck breast, 1 rye & rot cheese board, 1 sage & berry crumble</p>
                 </div>
                 <div class="ditemcost">₹1210</div>
-                <div class="ditemadd">
+                <div class="ditemadd" id = "ms">
                     <p>Add to cart</p>
+                    <div class="dnums">
+                        <div class="dminus">-</div>
+                        <div class="dnum">0</div>
+                        <div class="dplus">+</div>
+                    </div>
                 </div>
             </div>
             <div class="deliveryitem">
@@ -276,8 +286,13 @@
                     <p>1 flashlight keychain, 1 smoked forest toast, 1 sage & berry crumble, 1 watery whisky sour</p>
                 </div>
                 <div class="ditemcost">₹1210</div>
-                <div class="ditemadd">
+                <div class="ditemadd" id = "sa">
                     <p>Add to cart</p>
+                    <div class="dnums">
+                        <div class="dminus">-</div>
+                        <div class="dnum">0</div>
+                        <div class="dplus">+</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -429,5 +444,15 @@
         </div>
     </div>
     <script src="../static/index.js"></script>
+    <script>
+        if(window.location.href.includes("?username")) {
+            document.querySelector(".usertxt p:nth-child(1)").innerHTML = window.location.href.split("?username=")[1]
+        }
+        function cart() {
+            document.getElementById("carta").href = `cart?aw${document.querySelector("#aw .dnum").innerHTML}&ms${document.querySelector("#ms .dnum").innerHTML}&sa${document.querySelector("#sa .dnum").innerHTML}`
+            requestAnimationFrame(cart)
+        }
+        requestAnimationFrame(cart)
+    </script>
 </body>
 </html>

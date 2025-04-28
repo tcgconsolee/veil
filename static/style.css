@@ -1,5 +1,5 @@
 html {
-    scroll-behavior: smooth;
+    scroll-behavior:auto;
 }
 body {
     margin: 0;
@@ -7,7 +7,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
 }
- ::-webkit-scrollbar { /*can u also add like scroll resistance ykk meaning?*/
+ ::-webkit-scrollbar {
     width: 1px;
 }
 ::-webkit-scrollbar-thumb {
@@ -114,7 +114,7 @@ p {
     column-gap: 1.5vmax;
     z-index: 10;
 }
-.btns > div {
+.btns > a > div {
     background:#B02626;
     border-radius: 2vmax;
     color: #F8F8F8;
@@ -123,8 +123,6 @@ p {
     font-size: 0.9vmax;
     padding: 0.5vmax 1.5vmax;
     cursor: pointer;
-}
-.btns > div > a {
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 0.5vmax;
@@ -538,6 +536,18 @@ input:focus, select:focus {
     align-items: center;
     justify-content: center;
     border-radius: 2vmax;
+    cursor: pointer;
+}
+.dnums {
+    position: absolute;
+    display: none;
+    grid-template-columns: auto auto auto;
+    column-gap: 4vmax;
+    font-size: 1vmax;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color:#FF4B0A;
 }
 #contact {
     position: absolute;
@@ -911,4 +921,99 @@ div.options > label > input:checked +img {
     align-items: center;
     border-radius: 2vmax;
     cursor: pointer;
+}
+.checkouthead {
+    position: absolute;
+    left: 2.5vmax;
+    top: 7.5vmax;
+    font-family:'s';
+    font-size: 4vmax;
+    font-weight: 700;
+    color: #F8F8F8;
+}
+.checkouthead span {
+    color:#D40303;
+}
+.map {
+    position: absolute;
+    left: 2.5vmax;
+    top: 15vmax;
+    width: 60vmax;
+    height: 60vmin;
+}
+.map iframe {
+    width: 100%;
+    height: 100%;
+}
+.summary {
+    position: relative;
+    left: 68.75vmax;
+    top: 15vmax;
+    width: 25vmax;
+    height: 60vmin;
+    color:#F8F8F8;
+    font-family: 's';
+}
+.summary .bgimg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.summaryhead {
+    font-size: 2vmax;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 1.25vmax;
+}
+.headings {
+    position: absolute;
+    left: 2vmax;
+    top: 7.5vmax;
+    font-weight: 200;
+    font-size: 1.1vmax;
+    text-align: left;
+}
+.subtext {
+    position: absolute;
+    left: 14.5vmax;
+    top: 7.5vmax;
+    font-weight: 200;
+    font-size: 1.1vmax;
+    text-align: left;
+}
+.receipt {
+    position: absolute;
+    left: 2vmax;
+    top: 20vmax;
+    font-weight: 400;
+    font-size: 1.25vmax;
+    text-align: left;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.call {
+    position: absolute;
+    left: 2vmax;
+    top: 23.5vmax;
+    font-weight: 700;
+    font-size: 1.25vmax;
+    text-align: left;
+    line-height: 1.25vmax;
+}
+.call span {
+    font-size: 1vmax;
+    font-weight: 400;
+}
+.callimg {
+    position: absolute;
+    right: 3vmax;
+    top: 23.5vmax;
+    transform: translate(50%, 50%);
+    width: 1.5vmax;
+    cursor: pointer;
+}
+#about, #menu, #contact {
+    z-index: -1;
 }

@@ -6,6 +6,7 @@
     <title>Register</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="../static/loginregister.css">
+    <meta http-equiv="Permissions-Policy" content="geolocation=self">
 </head>
 <body>
     <div class="bg">
@@ -18,7 +19,7 @@
     </a>
     <div class="btns">
         <div class="cartbtn">
-            <a href="cart.html">
+            <a href="cart">
                 <div class="carticon">
                     <img src="../static/imgs/cart.svg" alt="">
                 </div>
@@ -81,6 +82,7 @@
             <input type="submit" value = "Sign up" class = "submit">
         </form>
     </div>
+    <script src="https://cdn.jsdelivr.net/gh/somanchiu/Keyless-Google-Maps-API@v6.9/mapsJavaScriptAPI.js"></script>
     <script>
         let psw = false;
         document.getElementsByClassName("hs")[0].addEventListener('click', () => {
@@ -103,8 +105,26 @@
         }
 
         function success(position) {
-            document.getElementById("loc").value = "Latitude: " + position.coords.latitude +
-            " & Longitude:  " + position.coords.longitude;
+            function getAddressFromLatLng(lat, lng) {
+            const geocoder = new google.maps.Geocoder();
+            const latlng = { lat: parseFloat(lat), lng: parseFloat(lng) };
+
+            geocoder.geocode({ location: latlng }, function(results, status) {
+                if (status === "OK") {
+                if (results[0]) {
+                    console.log(results[0].formatted_address);
+                    return results[0].formatted_address;
+                } else {
+                    console.log("No results found");
+                    return "No results found";
+                }
+                } else {
+                console.log("Geocoder failed due to: " + status);
+                return "Geocoder failed due to: " + status;
+                }
+            });
+            }
+            document.getElementById("loc").value = getAddressFromLatLng(position.coords.latitude, position.coords.longitude)
         }
 
         function error() {
