@@ -1,5 +1,43 @@
-
-if(Number((window.location.href.split("&aw=")[1]).split("&")[0]) > 0) {
+function addToCart(item) {
+    fetch(`/add_to_cart/${item}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify({
+            quantity: 1 
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log(`${item} added to cart`)
+        } else {
+            console.log('Failed to add to cart');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+function removeFromCart(item) {
+    fetch(`/remove_from_cart/${item}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log(`${item} removed from cart`);
+        } else {
+            console.log('Failed to remove from cart');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+if(Number((window.location.href.split("?aw=")[1]).split("&")[0]) > 0) {
     document.getElementsByClassName("grid")[0].insertAdjacentHTML('beforeend',
         `
         <div class="row" id = "awr">
@@ -17,7 +55,7 @@ if(Number((window.location.href.split("&aw=")[1]).split("&")[0]) > 0) {
                         <p>-</p>
                     </div>
                     <div class="num">
-                        <p>${Number((window.location.href.split("&aw=")[1]).split("&")[0])}</p>
+                        <p>${Number((window.location.href.split("?aw=")[1]).split("&")[0])}</p>
                     </div>
                     <div class="plus">
                         <p>+</p>
@@ -140,27 +178,27 @@ function cartcheck() {
     requestAnimationFrame(cartcheck)
 }
 requestAnimationFrame(cartcheck)
-document.getElementById("jf").addEventListener("click", () => {
-    window.location.href=`./index?username=${(window.location.href.split("?username=")[1]).split("&aw")[0]}&aw=${aw/1210}&ms=${ms/1210}&sa=${sa/1100}`
-})
-document.getElementById("ff").addEventListener("click", () => {
-    window.location.href=`./index#delivery?username=${(window.location.href.split("?username=")[1]).split("&aw")[0]}&aw=${aw/1210}&ms=${ms/1210}&sa=${sa/1100}`
-})
 document.querySelector("#awmb .minus").addEventListener("click", () => {
     document.querySelector("#awmb .num p").innerHTML = Number(document.querySelector("#awmb .num p").innerHTML) - 1
+    removeFromCart('aw')
 })
 document.querySelector("#awmb .plus").addEventListener("click", () => {
     document.querySelector("#awmb .num p").innerHTML = Number(document.querySelector("#awmb .num p").innerHTML) + 1
+    addToCart('aw')
 })
 document.querySelector("#msmb .minus").addEventListener("click", () => {
     document.querySelector("#msmb .num p").innerHTML = Number(document.querySelector("#msmb .num p").innerHTML) - 1
+    removeFromCart("ms")
 })
 document.querySelector("#msmb .plus").addEventListener("click", () => {
     document.querySelector("#msmb .num p").innerHTML = Number(document.querySelector("#msmb .num p").innerHTML) + 1
+    addToCart("ms")
 })
 document.querySelector("#samb .minus").addEventListener("click", () => {
     document.querySelector("#samb .num p").innerHTML = Number(document.querySelector("#samb .num p").innerHTML) - 1
+    removeFromCart("sa")
 })
 document.querySelector("#samb .plus").addEventListener("click", () => {
     document.querySelector("#samb .num p").innerHTML = Number(document.querySelector("#samb .num p").innerHTML) + 1
+    addToCart('sa')
 })

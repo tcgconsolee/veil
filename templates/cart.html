@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="otherlogo">
-        <a id="jf"><img src="../static/imgs/logo.svg" alt=""></a>
+        <a href="/"><img src="../static/imgs/logo.svg" alt=""></a>
     </div>
     <div class="carthead">
         <p>CART</p>
@@ -31,13 +31,13 @@
     </div>
     <div class="conc">
         <div>
-            <a id = "ff">continue shopping -></a>
+            <a href="/#delivery">continue shopping -></a>
         </div>
         <div>
             <p>Total: </p>
         </div>
         <div>
-            <p id = "total">₹3520</p>
+            <p id = "total">₹0</p>
         </div>
     </div>
     <div class="ordering">
@@ -89,16 +89,11 @@
             <input type="text" class="instructinput">
         </div>
     </div>
-    <a id = "delia">
+    <a href="delivery">
         <div class="pay">
             Pay For Order
         </div>
     </a>
     <script src="../static/cart.js"></script>
-    <script>
-        document.getElementById("delia").addEventListener("click", () => {
-            window.location.href=`delivery?total=${document.getElementById("total").innerHTML.slice(1)}&username=${(window.location.href.split("?username=")[1]).split("&aw")[0]}`
-        })
-    </script>
 </body>
 </html>

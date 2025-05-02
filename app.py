@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, url_for, request, jsonify
+from flask import Flask, render_template, redirect, url_for, request
 from flask_login import LoginManager, UserMixin, login_user, current_user
 from flask_sqlalchemy import SQLAlchemy
 
@@ -30,14 +30,50 @@ with app.app_context():
 @app.route('/')
 @app.route('/index')
 def index():
+    username = request.args.get('username')
+    if not username and current_user.is_authenticated:
+        return redirect("/?username="+ current_user.username + "&aw="+ current_user.aw + "&ms=" + current_user.ms + "&sa=" + current_user.sa)
     return render_template('index.html')
+
+@app.route('/add_to_cart/<item>', methods=["POST"])
+def add_to_cart(item):
+    data = request.get_json() 
+    quantity = data.get('quantity', 1)
+    
+    if item == 'aw':
+        current_user.aw = str(int(current_user.aw) + quantity)
+    elif item == 'sa':
+        current_user.sa = str(int(current_user.sa) + quantity)
+    elif item == 'ms':
+        current_user.ms = str(int(current_user.ms) + quantity)
+
+    db.session.commit()
+    return '', 200
+
+@app.route('/remove_from_cart/<item>', methods=["POST"])
+def remove_from_cart(item):    
+    if item == 'aw' and int(current_user.aw) > 0:
+        current_user.aw = str(int(current_user.aw) - 1)
+    elif item == 'sa' and int(current_user.sa) > 0:
+        current_user.sa = str(int(current_user.sa) - 1)
+    elif item == 'ms' and int(current_user.ms) > 0:
+        current_user.ms = str(int(current_user.ms) - 1)
+
+    db.session.commit()
+    return '', 200  
 
 @app.route('/cart')
 def cart():
+    aw = request.args.get('aw')
+    if not aw:
+        return redirect("/cart?aw=" + current_user.aw + "&ms=" + current_user.ms + "&sa=" + current_user.sa)
     return render_template("cart.html")
 
 @app.route('/delivery')
 def delivery():
+    total = request.args.get('total')
+    if not total:
+        return redirect("/delivery?total=" + str((int(current_user.aw)*1210) + (int(current_user.ms)*1210) + (int(current_user.sa)*1100)) + "&username=" + current_user.username)
     return render_template('delivery.html')
 
 
