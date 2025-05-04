@@ -38,6 +38,12 @@ document.addEventListener('keyup', (e) => {
 document.querySelectorAll("[class^='open']").forEach((el) => {
     el.addEventListener('click', () => {
         windowPopIn(document.getElementsByClassName(el.className.split("open")[1] + "-window")[0])
+        if(el.getAttribute('data-tooltip') === "Menu") {
+            document.getElementsByClassName("dropdownbar")[0].selectedIndex = 0;
+            Array.prototype.slice.call(document.getElementsByClassName("menuitems")[0].children).forEach((el) => {
+                el.style.display = "block"
+            })
+        }
         if(el.getAttribute('data-tooltip') === "Drinks") {
             document.getElementsByClassName("dropdownbar")[0].selectedIndex = 4;
             Array.prototype.slice.call(document.getElementsByClassName("menuitems")[0].children).forEach((el) => {
