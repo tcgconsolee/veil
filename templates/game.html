@@ -4,108 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veil</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="../static/style.css">
 </head>
-<body>
-    <div class="btns">
-        <a id ="carta">
-            <div class="cartbtn">
-                    <div class="carticon">
-                        <img src="../static/imgs/cart.svg" alt="">
-                    </div>
-                    <div class="carttxt">
-                        <p>Cart</p>
-                    </div>
-            </div>
-        </a>
-        <a id = "logina">
-            <div class="userbtn">
-                <div class="usericon">
-                    <img src="../static/imgs/user.svg" alt="">
-                </div>
-                <div class="usertxt">
-                    <p>Login</p>
-                    <p>user</p>
-                </div>
-            </div>
-        </a>
+<body style="overflow:hidden">
+    <div class="sound">
+        <img src="../static/imgs/sound_on.svg" alt="Turn the sound on!" id="sound_on" style = "display:none">
+        <img src="../static/imgs/sound_off.svg" alt="Turn the sound off!" id="sound_off">
     </div>
-    <div id="home">
-        <div class="bg">
-            <img src="../static/imgs/veil.png" alt="">
+    <audio src="../static/audio/tryingtoescape.wav" id="tryingtoescape">
+        <track kind ="subtitles" label="English Subtitles" src="../static/audio/subtitles/tryingtoescape.vtt" srclang = "en" default></track>
+    </audio>
+    <audio src="../static/audio/apartment.wav" id="apartment">
+        <track kind ="subtitles" label="English Subtitles" src="../static/audio/subtitles/apartment.vtt" srclang = "en" default></track>
+    </audio>
+    <audio src="../static/audio/mywayback.wav" id="mywayback">
+        <track kind ="subtitles" label="English Subtitles" src="../static/audio/subtitles/mywayback.vtt" srclang = "en" default></track>
+    </audio>
+    <audio src="../static/audio/lastchance.wav" id="lastchance">
+        <track kind ="subtitles" label="English Subtitles" src="../static/audio/subtitles/lastchance.vtt" srclang = "en" default></track>
+    </audio>
+    <div id="subtitles"></div>
+    <div class="icons">
+        <div class="cicon">
+            <a id = "carta"><img src="../static/imgs/cart.svg" alt=""></a>
         </div>
-        <div class="homemain">
-            <div class="homemenu">
-                <img src="../static/imgs/logo.svg" alt="">
-                <a href = "#about">About</a>
-                <a href = "#menu">Menu</a>
-                <a href = "#delivery">Delivery</a>
-                <a href = "#contactarea">Contact</a>
-            </div>
-            <div class="hometxt">
-                <div class="homehero">
-                    <p>THE ALAN WAKE 2 CINEMATIC REIMAGINED INTO A <span>RESTAURANT</span></p>
-                </div>
-                <div class="homedesc">
-                    <p>Our company uses interactive storytelling and immersive design not just to entertain, but to question the role of consumerism in both gaming and food. It turns passive eating into reflective engagement, curbing waste and challenging diners to rethink their relationship with technology, food, and reality.</p>
-                </div>
-            </div>
-            <div class="reservebtn">
-                <a href = "#contactarea">Reserve a Table</a>
-            </div>
+        <div class="uicon">
+            <a id = "logina"><img src="../static/imgs/user.svg" alt=""></a>
         </div>
     </div>
-    <div id="about">
-        <div class="aboutgrid">
-            <div class="mindroom">
-                <img src="../static/imgs/conceptblur.svg" alt="" class="bgimg">
-                <div class="abouthead">
-                    <p>Feel the experience</p>
-                </div>
-                <div class="aboutdesc">
-                    <p>The experience of the restaurant and cuisine will make you feel like you are in the game yourself.</p>
-                </div>
-                <div class="aboutfooter">ALAN WAKE II</div>
-                <div class="aboutbox"></div>
+    <img src="../static/imgs/table.png" alt="" class="bgofgame" usemap="#game-ui">
+    <map id="game-ui" name="game-ui">
+        <area shape="rect" alt="" title="" coords="256,135,376,233" id="opencontact" />
+        <area shape="rect" alt="" title="" coords="503,133,687,264" id="openabout" />
+        <area shape="rect" alt="" title="" coords="390,359,592,470" id="openmenu" />
+        <area shape="rect" alt="" title="" coords="212,272,382,384" id="opendelivery" />
+        <area shape="rect" alt="" title="" coords="635,352,729,472" id="openmenu" />
+        <area shape="rect" alt="" title="" coords="777,292,930,444" id="opencontact" />
+    </map>    
+    <div class="menu-window">
+        <div class="back">
+            <div class="esc">
+                <img src="../static/imgs/esc.svg" alt="">
             </div>
-            <div class="mealstory">
-                <img src="../static/imgs/conceptblur.svg" alt="" class="bgimg">
-                <div class="abouthead">
-                    <p>The meal is the story</p>
-                </div>
-                <div class="aboutdesc">
-                    <p>As you progress further and further into your meal, it uncovers more of the story.</p>
-                </div>
-                <div class="aboutfooter">ALAN WAKE II</div>
-                <div class="aboutbox"></div>
-            </div>
-            <div class="atmosphere">
-                <img src="../static/imgs/conceptblur.svg" alt="" class="bgimg">
-                <div class="abouthead">
-                    <p>Enjoy the atmosphere</p>
-                </div>
-                <div class="aboutdesc">
-                    <p>The ambience and lighting of the restaurant show the parallel themes of Light and Dark in the game.</p>
-                </div>
-                <div class="aboutfooter">ALAN WAKE II</div>
-                <div class="aboutbox"></div>
+            <div class="btxt">
+                <p>Back</p>
             </div>
         </div>
-        <div class="abtdelisystem">
-            <div class="abtdeligrid">
-                <div class="abtdelitext">THE DELIVERY SYSTEM</div>
-                <div class="abtdelidesc">We offer delivery to your house with our special set of mealboxes to provide you with the experience of Alan Wake 2 at the comfort of your house</div>
-                <div class="abtdelibtn">
-                    <a href = "#delivery">Order now</a>
-                </div>
-            </div>
-            <div class="bgimgcont">
-                <img src="../static/imgs/bigtxt.png" alt="" class="bgimg">
-            </div>
-        </div>
-    </div>
-    <div id="menu">
         <div class="menuhead">
             <p>the menu</p>
         </div>
@@ -453,7 +397,72 @@
             </div>
         </div>
     </div>
-    <div id="delivery">
+    <div class="about-window">
+        <div class="back">
+            <div class="esc">
+                <img src="../static/imgs/esc.svg" alt="">
+            </div>
+            <div class="btxt">
+                <p>Back</p>
+            </div>
+        </div>
+        <div class="aboutgrid">
+            <div class="mindroom">
+                <img src="../static/imgs/conceptblur.svg" alt="" class="bgimg">
+                <div class="abouthead">
+                    <p>Feel the experience</p>
+                </div>
+                <div class="aboutdesc">
+                    <p>The experience of the restaurant and cuisine will make you feel like you are in the game yourself.</p>
+                </div>
+                <div class="aboutfooter">ALAN WAKE II</div>
+                <div class="aboutbox"></div>
+            </div>
+            <div class="mealstory">
+                <img src="../static/imgs/conceptblur.svg" alt="" class="bgimg">
+                <div class="abouthead">
+                    <p>The meal is the story</p>
+                </div>
+                <div class="aboutdesc">
+                    <p>As you progress further and further into your meal, it uncovers more of the story.</p>
+                </div>
+                <div class="aboutfooter">ALAN WAKE II</div>
+                <div class="aboutbox"></div>
+            </div>
+            <div class="atmosphere">
+                <img src="../static/imgs/conceptblur.svg" alt="" class="bgimg">
+                <div class="abouthead">
+                    <p>Enjoy the atmosphere</p>
+                </div>
+                <div class="aboutdesc">
+                    <p>The ambience and lighting of the restaurant show the parallel themes of Light and Dark in the game.</p>
+                </div>
+                <div class="aboutfooter">ALAN WAKE II</div>
+                <div class="aboutbox"></div>
+            </div>
+        </div>
+        <div class="abtdelisystem">
+            <div class="abtdeligrid">
+                <div class="abtdelitext">THE DELIVERY SYSTEM</div>
+                <div class="abtdelidesc">We offer delivery to your house with our special set of mealboxes to provide you with the experience of Alan Wake 2 at the comfort of your house</div>
+                <div class="abtdelibtn">
+                    <a href = "#delivery">Order now</a>
+                </div>
+            </div>
+            <div class="bgimgcont">
+                <img src="../static/imgs/bigtxt.png" alt="" class="bgimg">
+            </div>
+        </div>
+    </div>
+    <div class="delivery-window">
+        <div class="back">
+            <div class="esc">
+                <img src="../static/imgs/esc.svg" alt="">
+            </div>
+            <div class="btxt">
+                <p>Back</p>
+            </div>
+        </div>
         <div class="deliveryhead">WANT IT AT YOUR <span>HOME</span>?</div>
         <div class="deliverydesc">we gotchu</div>
         <div class="deliveryitems">
@@ -519,7 +528,15 @@
             </div>
         </div>
     </div>
-    <div id="contact">
+    <div class="contact-window">
+        <div class="back">
+            <div class="esc">
+                <img src="../static/imgs/esc.svg" alt="">
+            </div>
+            <div class="btxt">
+                <p>Back</p>
+            </div>
+        </div>
         <div class="reviewhead">
             <p>Testimonials from our <span>valued guests</span>.</p>
         </div>
@@ -665,12 +682,15 @@
             </div>
         </div>
     </div>
-    <script src="../static/index.js"></script>
+    <script src="../static/game.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../static/rwd.js"></script>
     <script>
+        $(document).ready(function(e) {
+            $('img[usemap]').rwdImageMaps();
+        })
         if(window.location.href.includes("?username")) {
-            document.getElementById("logina").href = "game"
-            document.querySelector(".usertxt p:nth-child(1)").innerHTML = (window.location.href.split("?username=")[1]).split("&aw")[0]
-            document.querySelector(".usertxt p:nth-child(2)").innerHTML = "mind place"
+            document.getElementById("logina").href = "index"
         } else {
             document.getElementById("logina").href = "login"
         }

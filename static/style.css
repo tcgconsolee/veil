@@ -297,7 +297,8 @@ p {
 .menuhead {
     position: absolute;
     top: 2.5vmax;
-    left: 2.5vmax;
+    left: 50%;
+    transform: translateX(-50%);
     font-family: 's';
     font-size: 1vmax;
     font-weight: 400;
@@ -553,14 +554,14 @@ input:focus, select:focus {
 #contact {
     position: absolute;
     left: 0;
-    top: 400vh;
+    top: 405vh;
     width: 100vw;
     height: 130vh;
 }
 .reviewhead {
     position: absolute;
     left: 2.5vmax;
-    top: 10vmax;
+    top: 7.5vmax;
     color: #F8F8F8;
     font-family: 's';
     font-weight: 700;
@@ -571,7 +572,7 @@ input:focus, select:focus {
 }
 .reviews {
     position: absolute;
-    top: 17.5vmax;
+    top: 15vmax;
     left: 2.5vmax;
     display: grid;
     grid-auto-flow: column;
@@ -1028,4 +1029,146 @@ div.options > label > input:checked +img {
     font-family: 's';
     font-weight: 700;
     text-wrap: nowrap;
+}
+.sound {
+    position: absolute;
+    right: 2.5vmax;
+    top: 2.5vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    border: #F8F8F8 0.1px solid;
+    border-radius: 10px;
+}
+.sound img {
+    width: 2.5vmax;
+    transform: scale(0.75);
+    cursor: pointer;
+}
+#subtitles {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2.5vmin;
+    width: 80vw;
+    font-size: 2vmax;
+    font-family: 's';
+    font-weight: 200;
+    color:#F8F8F8;
+    z-index: 1000;
+}
+[class$="window"] {
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%) scale(0.75);
+    width: 100vw;
+    height: 120vh;
+    background: #1212129c;
+    backdrop-filter: blur(1px);
+    z-index: 10;
+    font-family: 's';
+    color:#F8F8F8;
+    transform-origin: top left;
+    border-radius: 3px;
+    display: none;
+}
+.back {
+    position: absolute;
+    left: 2vmax;
+    top: 2.2vmin;
+    display: grid;
+    grid-template-columns: min-content min-content;
+    column-gap: 0.5vmin;
+    cursor: pointer;
+}
+.back div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.btxt {
+    border-left: #F8F8F8 1px solid;
+    font-weight: 400;
+    font-size: 1.25vmax;
+    padding-left: 1vmin;
+}
+.esc img {
+    width: 1.25vmax;
+    padding-right: 0.5vmax;
+}
+@keyframes popout {
+    0% {
+        transform: scale(0.7) translate(-50%, -50%);
+    }
+    99.9% {
+        transform: scale(0) translate(-50%, -50%);
+    }
+    100% {
+        transform: scale(0) translate(-50%, -50%);
+    }
+}
+@keyframes popin {
+    0% {
+        transform: scale(0) translate(-50%, -50%);
+    }
+    99.9% {
+        transform: scale(0.7) translate(-50%, -50%);
+    }
+    100% {
+        transform: scale(0.7) translate(-50%, -50%);
+    }
+}
+.icons {
+    position: absolute;
+    display: grid;
+    left: 50%;
+    top: 2.5vmin;
+    transform: translateX(-50%);
+    grid-template-columns: 2.5vmax 2.5vmax;
+    column-gap: .5vmax;
+    height: 2.5vmax;
+    z-index: 1000;
+}
+.icons > div {
+    width: 100%;
+    height: 100%;
+    border: #F8F8F8 solid 0.1px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.bgofgame {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+@media screen and (min-width: 1050px) {
+    .bgofgame {
+        width: 100vw;
+    }
+}
+@media screen and (max-width: 1050px) {
+    .bgofgame {
+        height: 100vh;
+    }
+}
+#game-ui {
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    z-index: 1000;
+}
+map area {
+    cursor: pointer;
 }

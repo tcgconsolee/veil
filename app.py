@@ -35,6 +35,13 @@ def index():
         return redirect("/?username="+ current_user.username + "&aw="+ current_user.aw + "&ms=" + current_user.ms + "&sa=" + current_user.sa)
     return render_template('index.html')
 
+@app.route('/game')
+def game():
+    username = request.args.get('username')
+    if not username and current_user.is_authenticated:
+        return redirect("/game?username="+ current_user.username + "&aw="+ current_user.aw + "&ms=" + current_user.ms + "&sa=" + current_user.sa)
+    return render_template('game.html')
+
 @app.route('/add_to_cart/<item>', methods=["POST"])
 def add_to_cart(item):
     data = request.get_json() 
