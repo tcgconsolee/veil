@@ -13,62 +13,63 @@ document.getElementById("sound_off").addEventListener('click', () => {
 })
 
 function mute() {
-    document.getElementById("tryingtoescape").muted = true;
-    document.getElementById("lastchance").muted = true;
-    document.getElementById("mywayback").muted = true;
-    document.getElementById("apartment").muted = true;
+    document.getElementById("about").muted = true;
+    document.getElementById("menu").muted = true;
+    document.getElementById("delivery").muted = true;
+    document.getElementById("contact").muted = true;
 }
 function unmute() {
-    document.getElementById("tryingtoescape").muted = false;
-    document.getElementById("lastchance").muted = false;
-    document.getElementById("mywayback").muted = false;
-    document.getElementById("apartment").muted = false;
+    document.getElementById("about").muted = false;
+    document.getElementById("menu").muted = false;
+    document.getElementById("delivery").muted = false;
+    document.getElementById("contact").muted = false;
 }
-let i1 = 0;
-let i2 = 0;
-let i3 = 0;
 let prev = 5;
-setInterval(() => {
-    let newvar = Math.floor(Math.random() * 4);
-    while(newvar==prev || newvar > 3) {
-        newvar = Math.floor(Math.random() * 4);
-    }
-    document.getElementById(["tryingtoescape", "lastchance", "mywayback", "apartment"][newvar]).play()
-    prev = newvar;
-}, 30000);
 
-document.getElementById('tryingtoescape').textTracks[0].addEventListener('cuechange', function() {
-    document.getElementById('subtitles').innerText = this.cues[i1].text;
-    i1++
-});
-document.getElementById('lastchance').textTracks[0].addEventListener('cuechange', function() {
-    document.getElementById('subtitles').innerText = this.cues[i2].text;
-    i2++
-});
-document.getElementById('mywayback').textTracks[0].addEventListener('cuechange', function() {
-    document.getElementById('subtitles').innerText = this.cues[i3].text;
-    i3++
-});
-document.getElementById('apartment').addEventListener('play', function() {
+document.getElementById('about').addEventListener('play', function() {
     document.getElementById('subtitles').innerText = this.textTracks[0].cues[0].text;
 });
-document.getElementById("tryingtoescape").addEventListener('ended', () => {
+document.getElementById('contact').addEventListener('play', function() {
+    document.getElementById('subtitles').innerText = this.textTracks[0].cues[0].text;
+});
+document.getElementById('delivery').addEventListener('play', function() {
+    document.getElementById('subtitles').innerText = this.textTracks[0].cues[0].text;
+});
+document.getElementById('menu').addEventListener('play', function() {
+    document.getElementById('subtitles').innerText = this.textTracks[0].cues[0].text;
+});
+document.getElementById("about").addEventListener('ended', () => {
     document.getElementById("subtitles").innerText = "";
-    i1 = 0; i2 = 0; i3 = 0;
 })
-document.getElementById("lastchance").addEventListener('ended', () => {
+document.getElementById("contact").addEventListener('ended', () => {
     document.getElementById("subtitles").innerText = "";
-    i1 = 0; i2 = 0; i3 = 0;
 })
-document.getElementById("mywayback").addEventListener('ended', () => {
+document.getElementById("delivery").addEventListener('ended', () => {
     document.getElementById("subtitles").innerText = "";
-    i1 = 0; i2 = 0; i3 = 0;
 })
-document.getElementById("apartment").addEventListener('ended', () => {
+document.getElementById("menu").addEventListener('ended', () => {
     document.getElementById("subtitles").innerText = "";
-    i1 = 0; i2 = 0; i3 = 0;
 })
-
+document.querySelectorAll(".openabout").forEach((el) => {
+    el.addEventListener('mouseover', () => {
+        document.getElementById("about").play()
+    })
+})
+document.querySelectorAll(".openmenu").forEach((el) => {
+    el.addEventListener('mouseover', () => {
+        document.getElementById("menu").play()
+    })
+})
+document.querySelectorAll(".opendelivery").forEach((el) => {
+    el.addEventListener('mouseover', () => {
+        document.getElementById("delivery").play()
+    })
+})
+document.querySelectorAll(".opencontact").forEach((el) => {
+    el.addEventListener('mouseover', () => {
+        document.getElementById("contact").play()
+    })
+})
 document.getElementsByClassName("menu-window")[0].style.display = "none";
 document.getElementsByClassName("delivery-window")[0].style.display = "none";
 document.getElementsByClassName("about-window")[0].style.display = "none";
@@ -106,9 +107,9 @@ document.addEventListener('keyup', (e) => {
         windowPopOut(document.getElementsByClassName("delivery-window")[0])
     }
 })
-document.querySelectorAll("[id^='open']").forEach((el) => {
+document.querySelectorAll("[class^='open']").forEach((el) => {
     el.addEventListener('click', () => {
-        windowPopIn(document.getElementsByClassName(el.id.split("open")[1] + "-window")[0])
+        windowPopIn(document.getElementsByClassName(el.className.split("open")[1] + "-window")[0])
     })
 })
 document.querySelector(".abtdelibtn > a").addEventListener("click", () => {
