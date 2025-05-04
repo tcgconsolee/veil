@@ -676,6 +676,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/imagemapster/1.9.2/jquery.imagemapster.min.js" integrity="sha512-ZsmKb/IJXZOraadwL7TJHwPFykdsSDT8wGDILJ70dpTKkIgH51tRS4TPORFIkALX4Zs4+CFpxUGuBCGcLt5Z7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/imagemapster/1.8.0/jquery.imagemapster.min.js" integrity="sha512-18b1YKEQCvv8P4pvvf1lFmJIYLjU6gqzz8Cw+J/Q5lFL5bf56QtK8xMLH/7Vvv+FGRxscyeP7G5pq2AgtQEyAA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        if(window.location.href.includes("?username")) {
+            document.getElementById("logina").href = "index"
+        } else {
+            document.getElementById("logina").href = "login"
+        }
         $(window).on('load', function(e) {
             $('img[usemap]').rwdImageMaps();
         })
