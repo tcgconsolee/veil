@@ -33,7 +33,6 @@ setInterval(() => {
     while(newvar==prev || newvar > 3) {
         newvar = Math.floor(Math.random() * 4);
     }
-    console.log(["tryingtoescape", "lastchance", "mywayback", "apartment"][newvar])
     document.getElementById(["tryingtoescape", "lastchance", "mywayback", "apartment"][newvar]).play()
     prev = newvar;
 }, 30000);
@@ -94,22 +93,21 @@ document.addEventListener('keyup', (e) => {
     if(!e.key=="Escape") {
         return;
     }
-    if(!document.getElementsByClassName("menu-window")[0].style.display === "none") {
+    if(document.getElementsByClassName("menu-window")[0].style.display !== "none") {
         windowPopOut(document.getElementsByClassName("menu-window")[0])
     }
-    if(!document.getElementsByClassName("contact-window")[0].style.display === "none") {
+    if(document.getElementsByClassName("contact-window")[0].style.display !== "none") {
         windowPopOut(document.getElementsByClassName("contact-window")[0])
     }
-    if(!document.getElementsByClassName("about-window")[0].style.display === "none") {
+    if(document.getElementsByClassName("about-window")[0].style.display !== "none") {
         windowPopOut(document.getElementsByClassName("about-window")[0])
     }
-    if(!document.getElementsByClassName("delivery-window")[0].style.display === "none") {
+    if(document.getElementsByClassName("delivery-window")[0].style.display !== "none") {
         windowPopOut(document.getElementsByClassName("delivery-window")[0])
     }
 })
 document.querySelectorAll("[id^='open']").forEach((el) => {
     el.addEventListener('click', () => {
-        console.log(el.id.split("open")[1] + "-window")
         windowPopIn(document.getElementsByClassName(el.id.split("open")[1] + "-window")[0])
     })
 })
