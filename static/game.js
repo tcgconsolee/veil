@@ -1,75 +1,3 @@
-let sound = true;
-document.getElementById("sound_on").addEventListener('click', () => {
-    sound = false;
-    document.getElementById("sound_on").style.display = "none"
-    document.getElementById("sound_off").style.display = "block"
-    unmute()
-})
-document.getElementById("sound_off").addEventListener('click', () => {
-    sound = true;
-    document.getElementById("sound_off").style.display = "none"
-    document.getElementById("sound_on").style.display = "block"
-    mute()
-})
-
-function mute() {
-    document.getElementById("about").muted = true;
-    document.getElementById("menu").muted = true;
-    document.getElementById("delivery").muted = true;
-    document.getElementById("contact").muted = true;
-}
-function unmute() {
-    document.getElementById("about").muted = false;
-    document.getElementById("menu").muted = false;
-    document.getElementById("delivery").muted = false;
-    document.getElementById("contact").muted = false;
-}
-let prev = 5;
-
-document.getElementById('about').addEventListener('play', function() {
-    document.getElementById('subtitles').innerText = this.textTracks[0].cues[0].text;
-});
-document.getElementById('contact').addEventListener('play', function() {
-    document.getElementById('subtitles').innerText = this.textTracks[0].cues[0].text;
-});
-document.getElementById('delivery').addEventListener('play', function() {
-    document.getElementById('subtitles').innerText = this.textTracks[0].cues[0].text;
-});
-document.getElementById('menu').addEventListener('play', function() {
-    document.getElementById('subtitles').innerText = this.textTracks[0].cues[0].text;
-});
-document.getElementById("about").addEventListener('ended', () => {
-    document.getElementById("subtitles").innerText = "";
-})
-document.getElementById("contact").addEventListener('ended', () => {
-    document.getElementById("subtitles").innerText = "";
-})
-document.getElementById("delivery").addEventListener('ended', () => {
-    document.getElementById("subtitles").innerText = "";
-})
-document.getElementById("menu").addEventListener('ended', () => {
-    document.getElementById("subtitles").innerText = "";
-})
-document.querySelectorAll(".openabout").forEach((el) => {
-    el.addEventListener('mouseover', () => {
-        document.getElementById("about").play()
-    })
-})
-document.querySelectorAll(".openmenu").forEach((el) => {
-    el.addEventListener('mouseover', () => {
-        document.getElementById("menu").play()
-    })
-})
-document.querySelectorAll(".opendelivery").forEach((el) => {
-    el.addEventListener('mouseover', () => {
-        document.getElementById("delivery").play()
-    })
-})
-document.querySelectorAll(".opencontact").forEach((el) => {
-    el.addEventListener('mouseover', () => {
-        document.getElementById("contact").play()
-    })
-})
 document.getElementsByClassName("menu-window")[0].style.display = "none";
 document.getElementsByClassName("delivery-window")[0].style.display = "none";
 document.getElementsByClassName("about-window")[0].style.display = "none";
@@ -110,6 +38,15 @@ document.addEventListener('keyup', (e) => {
 document.querySelectorAll("[class^='open']").forEach((el) => {
     el.addEventListener('click', () => {
         windowPopIn(document.getElementsByClassName(el.className.split("open")[1] + "-window")[0])
+        if(el.getAttribute('data-tooltip') === "Drinks") {
+            document.getElementsByClassName("dropdownbar")[0].selectedIndex = 4;
+            Array.prototype.slice.call(document.getElementsByClassName("menuitems")[0].children).forEach((el) => {
+                el.style.display = "none"
+            })
+            document.querySelectorAll(".menuitem." + document.getElementsByClassName("dropdownbar")[0].options[document.getElementsByClassName("dropdownbar")[0].selectedIndex].value.toLowerCase()).forEach((el) => {
+                el.style.display = "block"
+            })
+        }
     })
 })
 document.querySelector(".abtdelibtn > a").addEventListener("click", () => {
