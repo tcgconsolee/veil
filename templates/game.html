@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veil</title>
     <link rel="stylesheet" href="../static/style.css">
 </head>
+
 <body style="overflow:hidden" onload="myInit()">
     <div class="icons">
         <div class="cicon">
-            <a id = "carta"><img src="../static/imgs/cart.svg" alt=""></a>
+            <a id="carta"><img src="../static/imgs/cart.svg" alt=""></a>
         </div>
         <div class="uicon">
-            <a id = "logina"><img src="../static/imgs/user.svg" alt=""></a>
+            <a id="logina"><img src="../static/imgs/user.svg" alt=""></a>
         </div>
     </div>
     <img src="../static/imgs/table.png" alt="" class="bgofgame" usemap="#game-ui">
     <map id="game-ui" name="game-ui">
-        <area shape="rect" alt="" title="" coords="256,135,376,233" class="opencontact" onmouseover="myHover(this)" onmouseout="myLeave()" data-tooltip = "Contact"/>
-        <area shape="rect" alt="" title="" coords="503,133,687,264" class="openabout" onmouseover="myHover(this)" onmouseout="myLeave()" data-tooltip = "About"/>
-        <area shape="rect" alt="" title="" coords="390,359,592,470" class="openmenu" onmouseover="myHover(this)" onmouseout="myLeave()" data-tooltip = "Menu"/>
-        <area shape="rect" alt="" title="" coords="212,272,382,384" class="opendelivery"onmouseover="myHover(this)" onmouseout="myLeave()" data-tooltip = "Delivery"/>
-        <area shape="rect" alt="" title="" coords="635,352,729,472" class="openmenu"onmouseover="myHover(this)" onmouseout="myLeave()" data-tooltip = "Drinks"/>
-        <area shape="rect" alt="" title="" coords="777,292,930,444" class="opencontact" onmouseover="myHover(this)" onmouseout="myLeave()" data-tooltip = "Contact"/>
-    </map>  
+        <area shape="rect" alt="" title="" coords="256,135,376,233" class="opencontact" onmouseover="myHover(this)"
+            onmouseout="myLeave()" data-tooltip="Contact" />
+        <area shape="rect" alt="" title="" coords="503,133,687,264" class="openabout" onmouseover="myHover(this)"
+            onmouseout="myLeave()" data-tooltip="About" />
+        <area shape="rect" alt="" title="" coords="390,359,592,470" class="openmenu" onmouseover="myHover(this)"
+            onmouseout="myLeave()" data-tooltip="Menu" />
+        <area shape="rect" alt="" title="" coords="212,272,382,384" class="opendelivery" onmouseover="myHover(this)"
+            onmouseout="myLeave()" data-tooltip="Delivery" />
+        <area shape="rect" alt="" title="" coords="635,352,729,472" class="openmenu" onmouseover="myHover(this)"
+            onmouseout="myLeave()" data-tooltip="Drinks" />
+        <area shape="rect" alt="" title="" coords="777,292,930,444" class="opencontact" onmouseover="myHover(this)"
+            onmouseout="myLeave()" data-tooltip="Contact" />
+    </map>
     <div id="tooltip">
         <div id="tooltip-text">Tooltip</div>
         <div id="tooltip-arrow"></div>
@@ -45,7 +53,7 @@
                 <div class="searchlogo">
                     <img src="../static/imgs/search.svg" alt="">
                 </div>
-                <input type="search" class = "searchtxt" placeholder = "Search">
+                <input type="search" class="searchtxt" placeholder="Search">
             </div>
             <div class="dropdown">
                 <select class="dropdownbar">
@@ -190,7 +198,8 @@
                     <p>Midnight Lasagna</p>
                 </div>
                 <div class="itemdesc">
-                    <p>Braised beef, “nightshade” marinara, and a smoked cheese béchamel — layered like a hidden manuscript.</p>
+                    <p>Braised beef, “nightshade” marinara, and a smoked cheese béchamel — layered like a hidden
+                        manuscript.</p>
                 </div>
                 <div class="itemimg">
                     <img src="../static/imgs/dishes/lasagna.png" alt="">
@@ -400,7 +409,8 @@
                     <p>Feel the experience</p>
                 </div>
                 <div class="aboutdesc">
-                    <p>The experience of the restaurant and cuisine will make you feel like you are in the game yourself.</p>
+                    <p>The experience of the restaurant and cuisine will make you feel like you are in the game
+                        yourself.</p>
                 </div>
                 <div class="aboutfooter">ALAN WAKE II</div>
                 <div class="aboutbox"></div>
@@ -422,7 +432,8 @@
                     <p>Enjoy the atmosphere</p>
                 </div>
                 <div class="aboutdesc">
-                    <p>The ambience and lighting of the restaurant show the parallel themes of Light and Dark in the game.</p>
+                    <p>The ambience and lighting of the restaurant show the parallel themes of Light and Dark in the
+                        game.</p>
                 </div>
                 <div class="aboutfooter">ALAN WAKE II</div>
                 <div class="aboutbox"></div>
@@ -431,9 +442,10 @@
         <div class="abtdelisystem">
             <div class="abtdeligrid">
                 <div class="abtdelitext">THE DELIVERY SYSTEM</div>
-                <div class="abtdelidesc">We offer delivery to your house with our special set of mealboxes to provide you with the experience of Alan Wake 2 at the comfort of your house</div>
+                <div class="abtdelidesc">We offer delivery to your house with our special set of mealboxes to provide
+                    you with the experience of Alan Wake 2 at the comfort of your house</div>
                 <div class="abtdelibtn">
-                    <a href = "#delivery">Order now</a>
+                    <a href="#delivery">Order now</a>
                 </div>
             </div>
             <div class="bgimgcont">
@@ -455,16 +467,18 @@
         <div class="deliveryitems">
             <div class="deliveryitem">
                 <div class="ditemimg">
-                    <img src="../static/imgs/mealbox.png" alt="" style="width:100%;position:absolute;top: 60%;transform:translateY(-50%)">
+                    <img src="../static/imgs/mealbox.png" alt=""
+                        style="width:100%;position:absolute;top: 60%;transform:translateY(-50%)">
                 </div>
                 <div class="ditemname">
                     <p>Alan Wake Meal Box</p>
                 </div>
                 <div class="ditemdesc">
-                    <p>1 Alan Wake funko pop, 1 midnight lasagna, 2 dark place old fashioned, 1 blackened venison stew, 1 ink dipped calamari, 1 lake mirror panna cotta</p>
+                    <p>1 Alan Wake funko pop, 1 midnight lasagna, 2 dark place old fashioned, 1 blackened venison stew,
+                        1 ink dipped calamari, 1 lake mirror panna cotta</p>
                 </div>
                 <div class="ditemcost">₹1210</div>
-                <div class="ditemadd" id = "aw">
+                <div class="ditemadd" id="aw">
                     <p>Add to cart</p>
                     <div class="dnums">
                         <div class="dminus">-</div>
@@ -475,16 +489,18 @@
             </div>
             <div class="deliveryitem">
                 <div class="ditemimg">
-                    <img src="../static/imgs/mealbox.png" alt="" style="width:100%;position:absolute;top: 60%;transform:translateY(-50%)">
+                    <img src="../static/imgs/mealbox.png" alt=""
+                        style="width:100%;position:absolute;top: 60%;transform:translateY(-50%)">
                 </div>
                 <div class="ditemname">
                     <p>Mr.Scratch Meal Box</p>
                 </div>
                 <div class="ditemdesc">
-                    <p>1 Mr. Scratch funko pop, 1 charred ribeye with ritual butter, 2 coffee world shake, 1 ash rubbed duck breast, 1 rye & rot cheese board, 1 sage & berry crumble</p>
+                    <p>1 Mr. Scratch funko pop, 1 charred ribeye with ritual butter, 2 coffee world shake, 1 ash rubbed
+                        duck breast, 1 rye & rot cheese board, 1 sage & berry crumble</p>
                 </div>
                 <div class="ditemcost">₹1210</div>
-                <div class="ditemadd" id = "ms">
+                <div class="ditemadd" id="ms">
                     <p>Add to cart</p>
                     <div class="dnums">
                         <div class="dminus">-</div>
@@ -495,7 +511,8 @@
             </div>
             <div class="deliveryitem">
                 <div class="ditemimg">
-                    <img src="../static/imgs/mealbox.png" alt="" style="width:100%;position:absolute;top: 60%;transform:translateY(-50%)">
+                    <img src="../static/imgs/mealbox.png" alt=""
+                        style="width:100%;position:absolute;top: 60%;transform:translateY(-50%)">
                 </div>
                 <div class="ditemname">
                     <p>Saga Andersson Meal Box</p>
@@ -504,7 +521,7 @@
                     <p>1 flashlight keychain, 1 smoked forest toast, 1 sage & berry crumble, 1 watery whisky sour</p>
                 </div>
                 <div class="ditemcost">₹1210</div>
-                <div class="ditemadd" id = "sa">
+                <div class="ditemadd" id="sa">
                     <p>Add to cart</p>
                     <div class="dnums">
                         <div class="dminus">-</div>
@@ -543,7 +560,9 @@
                 </div>
                 <div class="reviewdesc">
                     <p>
-                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured, genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a standing ovation: fl...
+                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured,
+                        genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a
+                        standing ovation: fl...
                     </p>
                 </div>
                 <div class="reviewpfp">
@@ -565,7 +584,9 @@
                 </div>
                 <div class="reviewdesc">
                     <p>
-                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured, genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a standing ovation: fl...
+                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured,
+                        genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a
+                        standing ovation: fl...
                     </p>
                 </div>
                 <div class="reviewpfp">
@@ -587,7 +608,9 @@
                 </div>
                 <div class="reviewdesc">
                     <p>
-                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured, genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a standing ovation: fl...
+                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured,
+                        genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a
+                        standing ovation: fl...
                     </p>
                 </div>
                 <div class="reviewpfp">
@@ -609,7 +632,9 @@
                 </div>
                 <div class="reviewdesc">
                     <p>
-                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured, genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a standing ovation: fl...
+                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured,
+                        genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a
+                        standing ovation: fl...
                     </p>
                 </div>
                 <div class="reviewpfp">
@@ -631,7 +656,9 @@
                 </div>
                 <div class="reviewdesc">
                     <p>
-                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured, genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a standing ovation: fl...
+                        Dining at Veil felt less like a meal and more like stepping into a story written by a tortured,
+                        genius author... or maybe one haunted by something deeper. The atmosphere alone deserves a
+                        standing ovation: fl...
                     </p>
                 </div>
                 <div class="reviewpfp">
@@ -665,7 +692,7 @@
                 <p>veil@gmail.com</p>
             </div>
             <div class="backtotop">
-                <a href = "#home">Back to the top</a>
+                <a href="#home">Back to the top</a>
             </div>
         </div>
     </div>
@@ -673,20 +700,24 @@
     <script src="../static/game.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="../static/rwd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/imagemapster/1.9.2/jquery.imagemapster.min.js" integrity="sha512-ZsmKb/IJXZOraadwL7TJHwPFykdsSDT8wGDILJ70dpTKkIgH51tRS4TPORFIkALX4Zs4+CFpxUGuBCGcLt5Z7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/imagemapster/1.8.0/jquery.imagemapster.min.js" integrity="sha512-18b1YKEQCvv8P4pvvf1lFmJIYLjU6gqzz8Cw+J/Q5lFL5bf56QtK8xMLH/7Vvv+FGRxscyeP7G5pq2AgtQEyAA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imagemapster/1.9.2/jquery.imagemapster.min.js"
+        integrity="sha512-ZsmKb/IJXZOraadwL7TJHwPFykdsSDT8wGDILJ70dpTKkIgH51tRS4TPORFIkALX4Zs4+CFpxUGuBCGcLt5Z7g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imagemapster/1.8.0/jquery.imagemapster.min.js"
+        integrity="sha512-18b1YKEQCvv8P4pvvf1lFmJIYLjU6gqzz8Cw+J/Q5lFL5bf56QtK8xMLH/7Vvv+FGRxscyeP7G5pq2AgtQEyAA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        if(window.location.href.includes("?username")) {
+        if (window.location.href.includes("?username")) {
             document.getElementById("logina").href = "index"
         } else {
             document.getElementById("logina").href = "login"
         }
-        $(window).on('load', function(e) {
+        $(window).on('load', function (e) {
             $('img[usemap]').rwdImageMaps();
         })
         var hdc;
 
-        function byId(e){return document.getElementById(e);}
+        function byId(e) { return document.getElementById(e); }
 
         let currentCenterX, currentCenterY, currentRadius;
         let fadeAnimId = null;
@@ -785,8 +816,7 @@
             hdc.fillStyle = grd;
             hdc.fillRect(0, 0, hdc.canvas.width, hdc.canvas.height);
         }
-        function myLeave()
-        {
+        function myLeave() {
             fadeOut()
 
             const tooltip = byId('tooltip');
@@ -794,11 +824,10 @@
             tooltip.style.transform = 'translateY(10px)';
         }
 
-        function myInit()
-        {
+        function myInit() {
             var img = document.getElementsByClassName("bgofgame")[0];
 
-            var x,y, w,h;
+            var x, y, w, h;
 
             x = img.offsetLeft;
             y = img.offsetTop;
@@ -811,8 +840,8 @@
 
             can.style.zIndex = 1;
 
-            can.style.left = x+'px';
-            can.style.top = y+'px';
+            can.style.left = x + 'px';
+            can.style.top = y + 'px';
             can.style.transform = 'translate(-50%, -50%)';
             can.style.mixBlendMode = 'soft-light'
 
@@ -820,7 +849,7 @@
             can.setAttribute('height', h);
 
             hdc = can.getContext('2d');
-            
+
 
             const grd = hdc.createRadialGradient(75, 65, 0, 75, 65, 100);
             hdc.globalAlpha = 1.0;
@@ -831,4 +860,5 @@
         }
     </script>
 </body>
+
 </html>
