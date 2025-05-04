@@ -686,11 +686,7 @@
         })
         var hdc;
 
-        // shorthand func
         function byId(e){return document.getElementById(e);}
-
-        // takes a string that contains coords eg - "227,307,261,309, 339,354, 328,371, 240,331"
-        // draws a line from each co-ord pair to the next - assumes starting point needs to be repeated as ending point.
 
         let currentCenterX, currentCenterY, currentRadius;
         let fadeAnimId = null;
@@ -712,7 +708,7 @@
             const duration = 200;
             const startTime = performance.now();
 
-            cancelAnimationFrame(fadeAnimId); // stop any existing animation
+            cancelAnimationFrame(fadeAnimId);
 
             function animate(time) {
                 const elapsed = time - startTime;
@@ -730,7 +726,7 @@
             const duration = 200;
             const startTime = performance.now();
 
-            cancelAnimationFrame(fadeAnimId); // stop any existing animation
+            cancelAnimationFrame(fadeAnimId);
 
             function animate(time) {
                 const elapsed = time - startTime;
@@ -753,10 +749,8 @@
             const coordStr = element.getAttribute('coords');
             const tooltipText = element.getAttribute('data-tooltip') || "Info";
 
-            // Trigger canvas highlight
             fadeIn(coordStr);
 
-            // Parse coords and calculate center
             const coords = coordStr.split(',').map(Number);
             let centerX, topY;
 
@@ -769,18 +763,15 @@
                 topY = coords[1];
             }
 
-            // Get tooltip and image
             const tooltip = byId('tooltip');
             const text = byId('tooltip-text');
             const img = document.getElementsByClassName("bgofgame")[0];
             const imgRect = img.getBoundingClientRect();
 
-            // Set tooltip content
             text.textContent = tooltipText;
 
-            // Position and animate
             tooltip.style.left = `${imgRect.left + centerX}px`;
-            tooltip.style.top = `${imgRect.top + topY - 40}px`; // 40px above point
+            tooltip.style.top = `${imgRect.top + topY - 40}px`;
             tooltip.style.opacity = 1;
             tooltip.style.transform = 'translateY(0px)';
         }
@@ -805,45 +796,37 @@
 
         function myInit()
         {
-            // get the target image
             var img = document.getElementsByClassName("bgofgame")[0];
 
             var x,y, w,h;
 
-            // get it's position and width+height
             x = img.offsetLeft;
             y = img.offsetTop;
             w = img.clientWidth;
             h = img.clientHeight;
 
-            // move the canvas, so it's contained by the same parent as the image
             var imgParent = img.parentNode;
             var can = byId('myCanvas');
             imgParent.appendChild(can);
 
-            // place the canvas in front of the image
             can.style.zIndex = 1;
 
-            // position it over the image
             can.style.left = x+'px';
             can.style.top = y+'px';
             can.style.transform = 'translate(-50%, -50%)';
             can.style.mixBlendMode = 'soft-light'
 
-            // make same size as the image
             can.setAttribute('width', w);
             can.setAttribute('height', h);
 
-            // get it's context
             hdc = can.getContext('2d');
             
 
-            // set the 'default' values for the colour/width of fill/stroke operations
             const grd = hdc.createRadialGradient(75, 65, 0, 75, 65, 100);
             hdc.globalAlpha = 1.0;
             hdc.globalCompositeOperation = "source-over";
             grd.addColorStop(0, "#060606");
-            grd.addColorStop(1, "#06060600"); // fully transparent at the edge
+            grd.addColorStop(1, "#06060600");
             hdc.fillStyle = grd;
         }
     </script>
