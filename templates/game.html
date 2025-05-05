@@ -785,8 +785,8 @@
             text.textContent = tooltipText;
         
             // Position tooltip near the mouse pointer
-            tooltip.style.left = `${event.clientX - (tooltip.style.width)*1.5}px`; // Slight offset from cursor
-            tooltip.style.top = `${event.clientY - (tooltip.style.height)*3}px`;
+            tooltip.style.left = `${event.clientX - (tooltip.style.width)*5}px`; // Slight offset from cursor
+            tooltip.style.top = `${event.clientY - (tooltip.style.height)*10}px`;
         
             tooltip.style.opacity = 1;
             tooltip.style.transform = 'translateY(0px)';
@@ -794,8 +794,8 @@
         function myMove(event) {
             const tooltip = byId('tooltip')
 
-            tooltip.style.left = `${event.clientX - (tooltip.style.width)*1.5}px`; // Slight offset from cursor
-            tooltip.style.top = `${event.clientY - (tooltip.style.height)*3}px`;
+            tooltip.style.left = `${event.clientX - (tooltip.style.width)*5}px`; // Slight offset from cursor
+            tooltip.style.top = `${event.clientY - (tooltip.style.height)*10}px`;
         }
         function drawGradient(centerX, centerY, radius, alpha) {
             hdc.clearRect(0, 0, hdc.canvas.width, hdc.canvas.height);
