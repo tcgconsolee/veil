@@ -19,15 +19,15 @@
     </div>
     <img src="../static/imgs/table.png" alt="" class="bgofgame" usemap="#game-ui">
     <map id="game-ui" name="game-ui">
-        <area shape="rect" alt="" title="" coords="503,133,687,264" class="openabout" onmouseover="myHover(this)"
+        <area shape="rect" alt="" title="" coords="503,133,687,264" class="openabout" onmouseover="myHover(this, event)"
             onmouseout="myLeave()" data-tooltip="About" />
-        <area shape="rect" alt="" title="" coords="390,359,592,470" class="openmenu" onmouseover="myHover(this)"
+        <area shape="rect" alt="" title="" coords="390,359,592,470" class="openmenu" onmouseover="myHover(this, event)"
             onmouseout="myLeave()" data-tooltip="Menu" />
-        <area shape="rect" alt="" title="" coords="212,272,382,384" class="opendelivery" onmouseover="myHover(this)"
+        <area shape="rect" alt="" title="" coords="212,272,382,384" class="opendelivery" onmouseover="myHover(this, event)"
             onmouseout="myLeave()" data-tooltip="Delivery" />
-        <area shape="rect" alt="" title="" coords="635,352,729,472" class="openmenu" onmouseover="myHover(this)"
+        <area shape="rect" alt="" title="" coords="635,352,729,472" class="openmenu" onmouseover="myHover(this, event)"
             onmouseout="myLeave()" data-tooltip="Drinks" />
-        <area shape="rect" alt="" title="" coords="777,292,930,444" class="opencontact" onmouseover="myHover(this)"
+        <area shape="rect" alt="" title="" coords="777,292,930,444" class="opencontact" onmouseover="myHover(this, event)"
             onmouseout="myLeave()" data-tooltip="Contact" />
     </map>
     <div id="tooltip">
@@ -774,33 +774,20 @@
             fadeAnimId = requestAnimationFrame(animate);
         }
 
-        function myHover(element) {
+        function myHover(element, event) {
             const coordStr = element.getAttribute('coords');
             const tooltipText = element.getAttribute('data-tooltip') || "Info";
-
+        
             fadeIn(coordStr);
-
-            const coords = coordStr.split(',').map(Number);
-            let centerX, topY;
-
-            if (coords.length >= 4) {
-                const x1 = coords[0], y1 = coords[1], x2 = coords[2], y2 = coords[3];
-                centerX = (x1 + x2) / 2;
-                topY = Math.min(y1, y2);
-            } else {
-                centerX = coords[0];
-                topY = coords[1];
-            }
-
+        
             const tooltip = byId('tooltip');
             const text = byId('tooltip-text');
-            const img = document.getElementsByClassName("bgofgame")[0];
-            const imgRect = img.getBoundingClientRect();
-
             text.textContent = tooltipText;
-
-            tooltip.style.left = `${imgRect.left + centerX}px`;
-            tooltip.style.top = `${imgRect.top + topY - 40}px`;
+        
+            // Position tooltip near the mouse pointer
+            tooltip.style.left = `${event.clientX + 10}px`; // Slight offset from cursor
+            tooltip.style.top = `${event.clientY + 10}px`;
+        
             tooltip.style.opacity = 1;
             tooltip.style.transform = 'translateY(0px)';
         }
